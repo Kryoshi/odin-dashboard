@@ -229,6 +229,8 @@ html, body {
     width: 7rem;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
+
+    transition: all 0.2s linear;
 }
 
 .lower .links li button:hover {
