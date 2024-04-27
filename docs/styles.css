@@ -176,8 +176,6 @@ html, body {
     height: 2rem;
     padding: 0.5rem 1rem;
     flex: 1;
-
-    transition: ;
 }
 
 .search input:focus {
