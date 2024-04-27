@@ -6,12 +6,12 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 16px;
 
-    --color-theme-sidebar: lightblue;
+    --color-theme-sidebar-bg: lightblue;
     --color-theme-page: antiquewhite;
-    --color-theme-page-background: grey;
+    --color-theme-page-bg: lightgrey;
 
-    --color-theme-headings: black;
-    --color-theme-text: lightgrey;
+    --color-theme-page-headings: black;
+    --color-theme-page-text: grey;
     --color-theme-sidebar-text: white;
 
     --color-theme-user: plum;
@@ -53,7 +53,90 @@ ul {
     list-style-type: none;
 }
 
-body {
+html, body {
     margin: 0;
     padding: 0;
+
+    height: 100%
+}
+
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 4fr;
+}
+
+.sidebar {
+    background: var(--color-theme-sidebar-bg);
+    color: var(--color-theme-sidebar-text);
+
+    grid-column: 1 / 2;
+}
+
+.page {
+    background: var(--color-theme-page-bg);
+    color: var(--color-theme-page-text);
+
+    display: grid;
+    grid-template-rows: 15rem 1fr;
+}
+
+.page h1, .page h2, .page h3, .page h4, .page h5, .page h6 {
+    color: var(--color-theme-page-headings);
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--color-theme-user);
+}
+
+.header {
+    background: var(--color-theme-page);
+    grid-row: 1 / 2;
+}
+
+.header .welcome .avatar {
+    height: 4rem;
+    width: 4rem;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.8rem;
+
+    padding: 1rem;
+}
+
+.projects {
+    grid-row: 1 / -1;
+}
+
+.projects ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 1rem;
+}
+
+.card {
+    background: var(--color-theme-page);
+
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.announcements ul {
+    background: var(--color-theme-page);
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
 }
